@@ -33,8 +33,24 @@ function operate(num1, operator, num2) {
 }
 
 const displayElement = document.querySelector(".display");
+const buttonElement = document.querySelectorAll(".buttons");
 const content = document.createElement("div"); 
 content.classList.add("content");
-content.textContent = "testing DOM";
+content.textContent = "";
+
+buttonElement.forEach (buttonElement => {
+    buttonElement.addEventListener("click", function(event) {
+        const button = event.target;
+        
+        if (button.classList.contains("number")) {
+         content.textContent += button.textContent; 
+        }
+        else if (button.classList.contains("operator")) {
+         content.textContent += button.textContent; 
+        }
+     
+     });
+})
+
 
 displayElement.appendChild(content);
