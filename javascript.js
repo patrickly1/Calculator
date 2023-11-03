@@ -52,10 +52,24 @@ buttonElement.forEach (button => {
             }
             content.textContent += buttonText.textContent; 
         }
+
         else if (buttonText.classList.contains("operator")) {
-            operator = buttonText.textContent;
-            content.textContent += buttonText.textContent;
+            if (num2 !== null) {
+                const result = operate(parseFloat(num1), operator, parseFloat(num2));
+                content.textContent = result;
+                num1 = result;
+                num2 = null;
+                operator = buttonText.textContent;
+                content.textContent += buttonText.textContent;
+            }   else if (num2 === null && operator !== null) {
+                operator = buttonText.textContent;
+                content.textContent = num1 + buttonText.textContent;
+            }   else  {
+                operator = buttonText.textContent;
+                content.textContent += buttonText.textContent;
+            } 
         }   
+
         else if (buttonText.classList.contains("equals")) {
             if (num1 !== null && num2 !== null && operator !== null) {
                 const result = operate(parseFloat(num1), operator, parseFloat(num2));
@@ -65,6 +79,7 @@ buttonElement.forEach (button => {
                 operator = null;
             }            
         }
+
         else if (buttonText.classList.contains("clear")) {
             num1 = null;
             operator = null;

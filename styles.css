@@ -1,0 +1,62 @@
+body {
+    background-color: rgb(200, 230, 255);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(173, 216, 230);
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 120px;
+    height: 30px;
+    background-color: rgb(173, 216, 230);
+    border: 1px solid black;
+    border-radius: 2px;
+    text-align: right;
+
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left {
+    flex: 1;
+    display: flex;
+    flex: wrap;
+}
+
+.right {
+    flex: 2;
+    display: flex;
+    flex: wrap;
+}
+
+.buttons button {
+    flex: 1;
+    width: 50%;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+
+}
+
+.operator, .equals, .clear {
+    background-color: orange;
+}
+
+.number {
+    background-color: rgb(173, 216, 230);
+}
