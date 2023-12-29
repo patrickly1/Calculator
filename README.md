@@ -1,3 +1,3 @@
 # Calculator
 
-This is an calculator app! 
+This is a calculator app! 
